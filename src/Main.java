@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Main {
@@ -71,18 +72,22 @@ public class Main {
 
         for (int i = 0; i < dogs.length; i++) {
             if (dogs[i] % 2 != 0 && i == dogs.length -1) {
-                System.out.print(dogs[i] + 1 + ". ");
+                dogs[i] += 1;
+                System.out.print(dogs[i] + ". ");
                 break;
             }
             else if (i == dogs.length -1) {
                 System.out.print(dogs[i] + ". ");
+                break;
             }
             else if (dogs[i] % 2 != 0) {
-                System.out.print(dogs[i] + 1 + ", ");
+                dogs[i] += 1;
+                System.out.print(dogs[i] + ", ");
             }
             else {
                 System.out.print(dogs[i] + ", ");
             }
         }
+        System.out.println("\n" + Arrays.toString(dogs)); // проверка вне цикла
     }
 }
